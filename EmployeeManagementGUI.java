@@ -130,8 +130,8 @@ class EmployeeManagementGUI
             String hireDate = hireDateField.getText();
             String address = addressField.getText();
 
-            try (BufferedReader reader = new BufferedReader(new FileReader("Employee.xls"));
-                 BufferedWriter writer = new BufferedWriter(new FileWriter("NewRec.xls"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\KIIT\\Desktop\\Internship\\Employee.xls"));
+                 BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\KIIT\\Desktop\\Internship\\NewRec.xls"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     writer.write(line + "\n");
@@ -162,14 +162,14 @@ class EmployeeManagementGUI
 
     public static void deleteFile() 
     {
-        File oldFile = new File("Employee.xls");
+        File oldFile = new File("C:\\Users\\KIIT\\Desktop\\Internship\\Employee.xls");
         oldFile.delete();
     }
 
     public static void renameFile() 
     {
-        File newFile = new File("NewRec.xls");
-        File oldFile = new File("Employee.xls");
+        File newFile = new File("C:\\Users\\KIIT\\Desktop\\Internship\\NewRec.xls");
+        File oldFile = new File("C:\\Users\\KIIT\\Desktop\\Internship\\Employee.xls");
         newFile.renameTo(oldFile);
     }
 
@@ -262,7 +262,7 @@ class EmployeeManagementGUI
         deleteButton.addActionListener(e -> {
             String empId = empIdField.getText();
             try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\KIIT\\Desktop\\Internship\\Employee.xls"));
-                 BufferedWriter writer = new BufferedWriter(new FileWriter("NewRec.xls"))) {
+                 BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\KIIT\\Desktop\\Internship\\NewRec.xls"))) {
                 String line;
                 boolean found = false;
                 while ((line = reader.readLine()) != null) {
